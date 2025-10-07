@@ -1,2 +1,58 @@
-# post_instalacion_linux
-Comandos a ejecutar despues de la instalacion de linux
+# Post Instalación Linux
+Comandos a ejecutar después de la instalación de linux
+
+
+### Comandos para la terminal
+
+- Actualización sistema y repositorios
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+- Instalación de utilidades básicas
+
+```bash
+sudo apt install wget gpg exfat-fuse hfsplus hfsutils ntfs-3g p7zip-full p7zip-rar rar unrar zip unzip libfuse2 unace
+```
+
+- Instalación programas
+
+```bash
+sudo apt install gimp gparted synaptic exaile virtualbox filezilla
+```
+
+- Limpiar sistema
+
+```bash
+sudo apt autoclean
+sudo apt autoremove
+sudo apt clean
+```
+
+- Instalar riseup-vpn
+
+```bash
+sudo add-apt-repository ppa:leapcodes/riseup-vpn
+sudo apt update
+sudo apt install riseup-vpn
+```
+
+- Agregar repositorios VScode
+
+```bash
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+rm -f packages.microsoft.gpg
+```
+
+- instalar VScode
+
+```bash
+sudo apt install apt-transport-https
+sudo apt update
+sudo apt install code # or code-insiders
+```
+
+
