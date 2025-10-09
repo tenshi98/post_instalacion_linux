@@ -17,9 +17,22 @@ sudo apt install wget gpg exfat-fuse hfsplus hfsutils ntfs-3g p7zip-full p7zip-r
 ```
 
 - Instalación programas
+    - Gimp: Editor de Imágenes
+    - Gparted: Administrador de particiones de disco duro
+    - Synaptic: Administrador de paquetes del sistema
+    - Exaile: Reproductor de audio
 
 ```bash
-sudo apt install gimp gparted synaptic exaile virtualbox filezilla
+sudo apt install gimp gparted synaptic exaile
+```
+
+- Instalación programas de desarrollo
+    - Virtualbox: Administrador de maquinas virtuales
+    - Filezilla: Acceso FTP a los servidores
+    - Composer: Gestor de dependencias para PHP
+
+```bash
+sudo apt install virtualbox filezilla composer
 ```
 
 - Limpiar sistema
@@ -38,7 +51,7 @@ sudo apt update
 sudo apt install riseup-vpn
 ```
 
-- Agregar repositorios VScode
+- Agregar repositorios Oficiales de VScode
 
 ```bash
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -47,7 +60,7 @@ echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft
 rm -f packages.microsoft.gpg
 ```
 
-- instalar VScode
+- Instalación VScode
 
 ```bash
 sudo apt install apt-transport-https
