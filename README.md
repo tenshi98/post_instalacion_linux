@@ -68,4 +68,14 @@ sudo apt update
 sudo apt install code # or code-insiders
 ```
 
+- Administración Remota
 
+```bash
+sudo apt install cockpit
+sudo systemctl status cockpit
+
+sudo apt install openssh-server
+sudo systemctl status ssh
+sudo systemctl enable ssh
+sudo systemctl start ssh
+```
