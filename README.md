@@ -2,7 +2,9 @@
 Comandos a ejecutar después de la instalación de linux
 
 
-### Comandos para la terminal
+## Comandos para la terminal
+
+### Sistema
 
 - Actualización sistema y repositorios
 
@@ -51,6 +53,8 @@ sudo apt update
 sudo apt install riseup-vpn
 ```
 
+### Programación
+
 - Agregar repositorios Oficiales de VScode
 
 ```bash
@@ -68,14 +72,91 @@ sudo apt update
 sudo apt install code # or code-insiders
 ```
 
-- Administración Remota
+### Docker
+
+- Instalación Docker
 
 ```bash
-sudo apt install cockpit
-sudo systemctl status cockpit
+#Instalación
+sudo apt install docker
+sudo apt install docker-compose
 
-sudo apt install openssh-server
-sudo systemctl status ssh
-sudo systemctl enable ssh
-sudo systemctl start ssh
+#Configurar inicio automático
+sudo systemctl status docker.service
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+```
+
+- Instalación portainer
+
+```bash
+### Instalación de portainer:
+sudo docker volume create portainer_data
+sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+
+#URL de acceso
+http://localhost:9443
+
+#repositorios portainer (opciones varias)
+https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json
+https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json
+https://raw.githubusercontent.com/ntv-one/portainer/main/template.json
+https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json
+```
+
+- Instalación Entorno para PHP-MYSQL-REDIS
+
+```bash
+# Clonar repositorio:
+git clone https://github.com/tenshi98/docker_entorno_lamp.git
+
+# Entrar a la carpeta:
+cd docker_entorno_lamp/
+
+# Añadir permisos de ejecución a un script:
+chmod +x build.sh
+chmod +x start.sh
+chmod +x stop.sh
+
+# Construir e iniciar el entorno
+# Esta tarea toma su tiempo ya que descarga los contenedores
+# Esta tarea se ejecuta solo la primera vez:
+sudo ./build.sh
+
+# Iniciar el entorno, en el caso de que no se inicie automáticamente:
+sudo ./start.sh
+
+# Detener el entorno:
+sudo ./stop.sh
+```
+
+- N8N
+
+N8N es una plataforma de automatización de flujos de trabajo que ofrece a los equipos técnicos la flexibilidad del código con la velocidad del no-code. Con más de 400 integraciones, capacidades de IA nativas y una licencia de código justo, n8n te permite crear automatizaciones potentes mientras mantienes el control total de tus datos e implementaciones.
+
+URL: https://github.com/n8n-io/n8n
+
+```bash
+### Instalación:
+sudo docker volume create n8n_data
+sudo docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
+
+#URL de acceso
+http://localhost:5678
+
+```
+
+- FossFLOW
+
+FossFLOW es una herramienta de código abierto y gratuita para crear diagramas isométricos atractivos de software o infraestructura.
+
+URL: https://github.com/stan-smith/FossFLOW
+
+```bash
+### Instalación:
+docker run -p 8096:80 -v $(pwd)/diagrams:/data/diagrams stnsmith/fossflow:latest
+
+#URL de acceso
+http://localhost:8096
+
 ```
