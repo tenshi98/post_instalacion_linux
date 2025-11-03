@@ -53,6 +53,29 @@ sudo apt update
 sudo apt install riseup-vpn
 ```
 
+- Instalar aplicaciones desde flatpak
+    - Czkawka: Buscador de archivivos, permite encontrar duplicados
+    - Discord: Discord
+    - Gearlever: Instalador de AppImages
+    - Onlyoffice: Suite ofimatica similar a Microsoft Office
+    - Parabolic: Permite descargar video y audio desde youtube y otros
+    - Teams for linux: Teams de microsoft
+    - Shortwave: Reproductor de radios online
+    - Switcheroo: Permite cambiar los formatos de imagenes
+    - Telegram: Telegram
+
+```bash
+sudo flatpak install flathub czkawka Discord gearlever Shortwave telegram
+```
+
+- Aplicaciones Web
+    - Chatgpt: https://chatgpt.com/
+    - Copilot: https://copilot.microsoft.com
+    - Gemini: https://gemini.google.com/
+    - whatsapp: https://web.whatsapp.com/
+    - Youtube: https://www.youtube.com/
+
+
 ### Programación
 
 - Agregar repositorios Oficiales de VScode
@@ -139,7 +162,7 @@ URL: https://github.com/n8n-io/n8n
 ```bash
 ### Instalación:
 sudo docker volume create n8n_data
-sudo docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
+sudo docker run -d -p 5678:5678 --name n8n --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
 
 #URL de acceso
 http://localhost:5678
@@ -154,7 +177,7 @@ URL: https://github.com/stan-smith/FossFLOW
 
 ```bash
 ### Instalación:
-docker run -p 8096:80 -v $(pwd)/diagrams:/data/diagrams stnsmith/fossflow:latest
+sudo docker run -d -p 8096:80 --name fossflow --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/diagrams:/data/diagrams stnsmith/fossflow:latest
 
 #URL de acceso
 http://localhost:8096
