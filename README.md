@@ -183,3 +183,18 @@ sudo docker run -d -p 8096:80 --name fossflow --restart=always -v /var/run/docke
 http://localhost:8096
 
 ```
+
+- tldraw
+
+tldraw es una herramienta de pizarra digital colaborativa y de código abierto para crear bocetos y diagramas rápidamente.
+
+URL: https://www.tldraw.com/
+
+```bash
+### Instalación:
+sudo docker run -d -p 8097:3000 --name tldraw --restart=always -v /var/run/docker.sock:/var/run/docker.sock heizicao/tldraw:4.0.2
+
+#URL de acceso
+http://localhost:8097
+
+```
