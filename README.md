@@ -54,14 +54,14 @@ sudo apt install riseup-vpn
 ```
 
 - Instalar aplicaciones desde flatpak
-    - Czkawka: Buscador de archivivos, permite encontrar duplicados
+    - Czkawka: Buscador de archivos, permite encontrar duplicados
     - Discord: Discord
     - Gearlever: Instalador de AppImages
     - Onlyoffice: Suite ofimatica similar a Microsoft Office
     - Parabolic: Permite descargar video y audio desde youtube y otros
     - Teams for linux: Teams de microsoft
-    - Shortwave: Reproductor de radios online
-    - Switcheroo: Permite cambiar los formatos de imagenes
+    - Shortwave: Reproductor de radio online
+    - Switcheroo: Permite cambiar los formatos de imagenes y optimizarlas
     - Telegram: Telegram
 
 ```bash
@@ -101,8 +101,7 @@ sudo apt install code # or code-insiders
 
 ```bash
 #Instalación
-sudo apt install docker
-sudo apt install docker-compose
+sudo apt install docker.io docker-compose
 
 #Configurar inicio automático
 sudo systemctl status docker.service
@@ -118,7 +117,7 @@ sudo docker volume create portainer_data
 sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 
 #URL de acceso
-http://localhost:9443
+https://localhost:9443
 
 #repositorios portainer (opciones varias)
 https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json
@@ -165,7 +164,7 @@ sudo docker volume create n8n_data
 sudo docker run -d -p 5678:5678 --name n8n --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
 
 #URL de acceso
-http://localhost:5678
+https://localhost:5678
 
 ```
 
@@ -180,7 +179,7 @@ URL: https://github.com/stan-smith/FossFLOW
 sudo docker run -d -p 8096:80 --name fossflow --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/diagrams:/data/diagrams stnsmith/fossflow:latest
 
 #URL de acceso
-http://localhost:8096
+https://localhost:8096
 
 ```
 
@@ -195,6 +194,23 @@ URL: https://www.tldraw.com/
 sudo docker run -d -p 8097:3000 --name tldraw --restart=always -v /var/run/docker.sock:/var/run/docker.sock heizicao/tldraw:4.0.2
 
 #URL de acceso
-http://localhost:8097
+https://localhost:8097
 
 ```
+
+- Excalidraw
+
+Excalidraw es una herramienta gratuita y de código abierto que permite crear diagramas, bocetos e ilustraciones digitales con un estilo de dibujo a mano alzada.
+Funciona como una pizarra virtual en línea, ideal para la lluvia de ideas, la creación de prototipos y la visualización de datos, con opciones de colaboración en tiempo real.
+
+URL: https://excalidraw.com/
+
+```bash
+### Instalación:
+sudo docker run -d -p 5000:80 --name excalidraw --restart=always -v /var/run/docker.sock:/var/run/docker.sock excalidraw/excalidraw:latest
+
+#URL de acceso
+https://localhost:5000
+
+```
+
