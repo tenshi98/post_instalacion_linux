@@ -80,11 +80,24 @@ sudo flatpak install flathub czkawka Discord gearlever Shortwave telegram
 
 - Agregar repositorios Oficiales de VScode
 
+- Oficial
 ```bash
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
 echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
 rm -f packages.microsoft.gpg
+```
+
+- Utilizado
+```bash
+# 1. Importar la clave GPG oficial
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+
+# 2. Instalar la clave en el sistema
+sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+
+# 3. Agregar el repositorio oficial
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
 ```
 
 - Instalación VScode
