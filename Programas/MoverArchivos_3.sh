@@ -485,7 +485,7 @@ rm -f /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigToken.php
 # --- Borrar modulos privados (3 pasos) ---
 run_step "rm -rf admin/app/modules/campanas"  rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/campanas/
 run_step "rm -rf admin/app/modules/IA_module"  rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/IA_module/
-run_step "rm -rf vendors/libs/php-ai-sdk"  rm -rf //mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/vendors/libs/php-ai-sdk/
+run_step "rm -rf vendors/libs/php-ai-sdk"  rm -rf /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/vendors/libs/php-ai-sdk/
 
 # ============================================================
 #  SECCION 4: PHP AI SDK
