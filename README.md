@@ -1,7 +1,7 @@
 # Post Instalación Linux
 Comandos a ejecutar después de la instalación de linux
 
-
+---
 ## Comandos para la terminal
 
 ### Sistema
@@ -54,42 +54,71 @@ sudo apt install riseup-vpn
 ```
 
 - Instalar aplicaciones desde flatpak
+    - ClamUI: Antivirus para Linux
     - Czkawka: Buscador de archivos, permite encontrar duplicados
     - Discord: Discord
     - Gearlever: Instalador de AppImages
+    - Mapas: Visualizador de Mapas del Mundo
     - Onlyoffice: Suite ofimatica similar a Microsoft Office
+    - Portal for Teams: Aplicacio compatible con Microsoft Teams
     - Parabolic: Permite descargar video y audio desde youtube y otros
-    - Teams for linux: Teams de microsoft
-    - Shortwave: Reproductor de radio online
-    - Switcheroo: Permite cambiar los formatos de imagenes y optimizarlas
     - Telegram: Telegram
+    - Warehouse: Permite gestionar las aplicaciones Flatpak
 
 ```bash
-sudo flatpak install flathub czkawka Discord gearlever Shortwave telegram
+sudo flatpak install flathub czkawka Discord gearlever telegram
 ```
+
+---
+## Configuraciones
 
 - Aplicaciones Web
-    - Chatgpt: https://chatgpt.com/
-    - Copilot: https://copilot.microsoft.com
-    - Gemini: https://gemini.google.com/
-    - whatsapp: https://web.whatsapp.com/
-    - Youtube: https://www.youtube.com/
+    - Arena AI: [https://arena.ai](https://arena.ai)
+    - Chatgpt: [https://chatgpt.com/](https://chatgpt.com/)
+    - Claude: [https://claude.ai/new](https://claude.ai/new)
+    - Copilot: [https://copilot.microsoft.com](https://copilot.microsoft.com)
+    - Deepseek: [https://chat.deepseek.com/](https://chat.deepseek.com/)
+    - Diagrams: [https://app.diagrams.net/](https://app.diagrams.net/)
+    - Gemini: [https://gemini.google.com/](https://gemini.google.com/)
+    - Genspark: [https://www.genspark.ai/](https://www.genspark.ai/)
+    - Google Stitch: [https://stitch.withgoogle.com/](https://stitch.withgoogle.com/)
+    - Minimax: [https://agent.minimax.io/](https://agent.minimax.io/)
+    - Notebook LM: [https://notebooklm.google.com/](https://notebooklm.google.com/)
+    - Perplexity: [https://www.perplexity.ai/](https://www.perplexity.ai/)
+    - Raphael AI: [https://raphael.app/es](https://raphael.app/es)
+    - Red Panda AI - Image to Image: [https://redpandaai.com/image/editor](https://redpandaai.com/image/editor)
+    - Red Panda AI - Text to Image: [https://redpandaai.com/image/generator](https://redpandaai.com/image/generator)
+    - VibecodeAPP: [https://www.vibecodeapp.com/](https://www.vibecodeapp.com/)
+    - whatsapp: [https://web.whatsapp.com/](https://web.whatsapp.com/)
+    - Youtube: [https://www.youtube.com/](https://www.youtube.com/)
+
+- Aplicaciones Menu
+    - Clima: weather@mockturtl
+    - Combined Monitor: por d-atoshi
+    - Lanzador de Aplicaciones: por mchilli
+    - Menu Clasico: por fredcw
 
 
-### Programación
+---
+## Repositorios nuevos
 
-- Agregar repositorios Oficiales de VScode
+### VScode
 
-- Oficial
 ```bash
+# ----------------- Oficial -----------------
+# 1. Importar la clave GPG oficial
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
-rm -f packages.microsoft.gpg
-```
 
-- Utilizado
-```bash
+# 2. Instalar la clave en el sistema
+sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+
+# 3. Agregar el repositorio oficial
+echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+
+# 4. Eliminacion de la clave GPG oficial
+rm -f packages.microsoft.gpg
+
+# ----------------- Utilizado -----------------
 # 1. Importar la clave GPG oficial
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 
@@ -98,32 +127,46 @@ sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
 
 # 3. Agregar el repositorio oficial
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
-```
 
-- Instalación VScode
-
-```bash
+# ----------------- Instalación VScode -----------------
 sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code # or code-insiders
 ```
 
-- Agregar repositorios Oficiales de Antigravity
+### Antigravity
 
 ```bash
+# ----------------- Agregar Repositorio -----------------
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg | \
   sudo gpg --dearmor -o /etc/apt/keyrings/antigravity-repo-key.gpg
 echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" | \
   sudo tee /etc/apt/sources.list.d/antigravity.list > /dev/null
-```
 
-- Instalación Antigravity
-
-```bash
+# ----------------- Instalación Antigravity -----------------
 sudo apt update
 sudo apt install antigravity
 ```
+
+### VSCodium
+
+```bash
+# ----------------- Agregar Repositorio -----------------
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+
+echo -e 'Types: deb\nURIs: https://download.vscodium.com/debs\nSuites: vscodium\nComponents: main\nArchitectures: amd64 arm64\nSigned-by: /usr/share/keyrings/vscodium-archive-keyring.gpg' \
+| sudo tee /etc/apt/sources.list.d/vscodium.sources
+
+# ----------------- Instalación VSCodium -----------------
+sudo apt update
+sudo apt install codium
+```
+
+---
+## Entornos de Trabajo
 
 ### Docker
 
@@ -203,7 +246,10 @@ sudo ./start.sh
 sudo ./stop.sh
 ```
 
-- N8N
+---
+## Otros Programas para Docker
+
+### N8N
 
 N8N es una plataforma de automatización de flujos de trabajo que ofrece a los equipos técnicos la flexibilidad del código con la velocidad del no-code. Con más de 400 integraciones, capacidades de IA nativas y una licencia de código justo, n8n te permite crear automatizaciones potentes mientras mantienes el control total de tus datos e implementaciones.
 
@@ -219,7 +265,7 @@ https://localhost:5678
 
 ```
 
-- FossFLOW
+### FossFLOW
 
 FossFLOW es una herramienta de código abierto y gratuita para crear diagramas isométricos atractivos de software o infraestructura.
 
@@ -234,7 +280,7 @@ https://localhost:8096
 
 ```
 
-- tldraw
+### tldraw
 
 tldraw es una herramienta de pizarra digital colaborativa y de código abierto para crear bocetos y diagramas rápidamente.
 
@@ -249,7 +295,7 @@ https://localhost:8097
 
 ```
 
-- Excalidraw
+### Excalidraw
 
 Excalidraw es una herramienta gratuita y de código abierto que permite crear diagramas, bocetos e ilustraciones digitales con un estilo de dibujo a mano alzada.
 Funciona como una pizarra virtual en línea, ideal para la lluvia de ideas, la creación de prototipos y la visualización de datos, con opciones de colaboración en tiempo real.
@@ -265,3 +311,40 @@ https://localhost:5000
 
 ```
 
+### Open-Webui
+
+Open WebUI es una interfaz web de código abierto, autoalojada y muy similar a ChatGPT, diseñada para interactuar con grandes modelos de lenguaje (LLM) de forma privada y local.
+
+URL: https://github.com/open-webui/open-webui
+
+```bash
+# If Ollama is on your computer, use this command:
+sudo docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+# If Ollama is on a Different Server, use this command:
+## To connect to Ollama on another server, change the OLLAMA_BASE_URL to the server's URL:
+sudo docker run -d -p 3000:8080 -e OLLAMA_BASE_URL=https://example.com -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+# To run Open WebUI with Nvidia GPU support, use this command:
+sudo docker run -d -p 3000:8080 --gpus all --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda
+
+
+#URL de acceso
+https://localhost:3000
+
+```
+
+### Omniroute
+
+OmniRoute es una puerta de enlace (gateway) de inteligencia artificial de código abierto que agrupa cientos de proveedores y modelos en un único punto de acceso local.
+
+URL: https://hub.docker.com/r/diegosouzapw/omniroute
+
+```bash
+# Intall:
+sudo docker run -d -p 20128:20128 --name omniroute --restart=always --add-host=host.docker.internal:host-gateway -v /mnt/Desarrollos/Docker/omniroute:/data diegosouzapw/omniroute:latest
+
+#URL de acceso
+https://localhost:20128
+
+```
