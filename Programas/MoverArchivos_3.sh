@@ -47,7 +47,7 @@ tput smcup
 clear
 
 # --- Variables globales ---
-TOTAL_STEPS=67
+TOTAL_STEPS=75
 CURRENT_STEP=0
 CURRENT_SECTION=""
 CURRENT_TASK=""
@@ -112,7 +112,7 @@ CAT_FRAMES=(
 　／￣|　　 |　|　|
 　| (￣ヽ＿_ヽ_)__)
 　＼二つ"
-"　　　　　🌸＞　　フ        
+"　　　　　🌸＞　　フ
 　　　　　| 　-　 - l
 　 　　　／\` ミ_wノ
 　　 　 /　　　 　 |
@@ -329,7 +329,7 @@ draw_separator
 sleep 0.5
 
 # ============================================================
-#  SECCION 1: Trabajo_polz_asociados_system
+#  SECCION: Trabajo_polz_asociados_system
 # ============================================================
 CURRENT_SECTION="Trabajo_polz_asociados_system"
 
@@ -345,13 +345,13 @@ run_step "rm -rf sistema_polza_admin"              rm -rf /mnt/Desarrollos/Githu
 run_step "rm -rf sistema_polza_compradores"        rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_compradores/
 run_step "rm -rf sistema_polza_corredores"         rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_corredores/
 run_step "rm -rf sistema_polza_ejecutivos"         rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_ejecutivos/
-run_step "rm -rf sistema_polza_vendedores"         rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_vendedores/
 run_step "rm -rf sistema_polza_geominas"           rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_geominas/
+run_step "rm -rf sistema_polza_vendedores"         rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_vendedores/
+run_step "rm -rf sitio_web_polz_geominas"          rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_geominas/
 run_step "rm -rf sitio_web_polz_lomas_de_lambert"  rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_lomas_de_lambert/
 run_step "rm -rf sitio_web_polz_terrania_v2"       rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_terrania_v2/
-run_step "rm -rf sitio_web_polz_geominas"          rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_geominas/
 
-# --- Borrar archivo (1 paso) ---
+# --- Borrar archivo ---
 run_step "rm -f Legacy/index.php"   rm -f /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/Legacy/index.php
 
 # --- Crear carpetas (1 paso agrupado) ---
@@ -367,11 +367,11 @@ mkdir -p /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_adm
 mkdir -p /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_compradores
 mkdir -p /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_corredores
 mkdir -p /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_ejecutivos
-mkdir -p /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_vendedores
 mkdir -p /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_geominas
+mkdir -p /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_vendedores
+mkdir -p /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_geominas
 mkdir -p /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_lomas_de_lambert
 mkdir -p /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_terrania_v2
-mkdir -p /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_geominas
 "
 
 # --- Copiar carpetas (16 pasos) ---
@@ -386,27 +386,46 @@ run_step "cp -r sistema_polza_admin"              cp -r /mnt/Desarrollos/Entorno
 run_step "cp -r sistema_polza_compradores"        cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados/sistema_polza_compradores/       /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/
 run_step "cp -r sistema_polza_corredores"         cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados/sistema_polza_corredores/        /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/
 run_step "cp -r sistema_polza_ejecutivos"         cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados/sistema_polza_ejecutivos/        /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/
-run_step "cp -r sistema_polza_vendedores"         cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados/sistema_polza_vendedores/        /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/
 run_step "cp -r sistema_polza_geominas"           cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados/sistema_polza_geominas/          /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/
+run_step "cp -r sistema_polza_vendedores"         cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados/sistema_polza_vendedores/        /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/
+run_step "cp -r sitio_web_polz_geominas"          cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados/sitio_web_polz_geominas/         /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/
 run_step "cp -r sitio_web_polz_lomas_de_lambert"  cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados/sitio_web_polz_lomas_de_lambert/ /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/
 run_step "cp -r sitio_web_polz_terrania_v2"       cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados/sitio_web_polz_terrania_v2/      /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/
-run_step "cp -r sitio_web_polz_geominas"          cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados/sitio_web_polz_geominas/         /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/
 
-# --- Copiar archivo Legacy/index.php (1 paso) ---
+# --- Copiar archivo Legacy/index.php ---
 run_step "cp Legacy/index.php"  cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados/Legacy/index.php /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/Legacy/
 
 # --- Borrar configs (1 paso agrupado) ---
 run_step "rm -f configs (polz_system)" bash -c "
-rm -f /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_admin/A1XRXS_sys/xrxs_configuracion/config.php
-rm -f /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_admin/A1XRXS_sys/xrxs_configuracion/config_cron.php
-rm -f /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_compradores/A1XRXS_sys/xrxs_configuracion/config.php
-rm -f /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_corredores/A1XRXS_sys/xrxs_configuracion/config.php
-rm -f /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_ejecutivos/A1XRXS_sys/xrxs_configuracion/config.php
-rm -f /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_vendedores/A1XRXS_sys/xrxs_configuracion/config.php
-rm -f /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_geominas/A1XRXS_sys/xrxs_configuracion/config.php
-rm -f /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_lomas_de_lambert/A1XRXS_sys/xrxs_configuracion/config.php
-rm -f /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_terrania_v2/A1XRXS_sys/xrxs_configuracion/config.php
-rm -f /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_geominas/A1XRXS_sys/xrxs_configuracion/config.php
+mv /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_admin/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_admin/A1XRXS_sys/xrxs_configuracion/config.php.example
+
+mv /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_admin/A1XRXS_sys/xrxs_configuracion/config_cron.php \
+   /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_admin/A1XRXS_sys/xrxs_configuracion/config_cron.php.example
+
+mv /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_compradores/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_compradores/A1XRXS_sys/xrxs_configuracion/config.php.example
+
+mv /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_corredores/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_corredores/A1XRXS_sys/xrxs_configuracion/config.php.example
+
+mv /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_ejecutivos/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_ejecutivos/A1XRXS_sys/xrxs_configuracion/config.php.example
+
+mv /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_vendedores/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_vendedores/A1XRXS_sys/xrxs_configuracion/config.php.example
+
+mv /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_geominas/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_geominas/A1XRXS_sys/xrxs_configuracion/config.php.example
+
+mv /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_lomas_de_lambert/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_lomas_de_lambert/A1XRXS_sys/xrxs_configuracion/config.php.example
+
+mv /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_terrania_v2/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_terrania_v2/A1XRXS_sys/xrxs_configuracion/config.php.example
+
+mv /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_geominas/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_geominas/A1XRXS_sys/xrxs_configuracion/config.php.example
 "
 
 # --- Borrar carpetas extras (1 paso agrupado) ---
@@ -414,9 +433,6 @@ run_step "rm -rf carpetas extras (admin/webs)" bash -c "
 rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_admin/ClientFiles/_public/
 rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_admin/templates/
 rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_system/sistema_polza_admin/upload/
-rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_lomas_de_lambert/FUERA/
-rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_terrania_v2/FUERA/
-rm -rf /mnt/Desarrollos/Github/Trabajo_polz_asociados_webs/sitio_web_polz_geominas/FUERA/
 "
 
 # --- Crear carpetas extras (1 paso agrupado) ---
@@ -438,90 +454,113 @@ cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/power_engine_polz_asociados
 "
 
 # ============================================================
-#  SECCION 2: CoreEngine
+#  SECCION: CoreEngine
 # ============================================================
 CURRENT_SECTION="CoreEngine"
 
-# --- Borrar carpeta (1 paso) ---
+# --- Borrar carpeta ---
 run_step "rm -rf frontend-plataforma-monolitica"  rm -rf /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
 
-# --- Crear carpeta (1 paso) ---
+# --- Crear carpeta ---
 run_step "mkdir -p frontend-plataforma-monolitica" mkdir -p /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica
 
-# --- Copiar carpetas (9 pasos) ---
-run_step "cp -r admin"                       cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/admin/                       /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
-run_step "cp -r sites_csjpro_web"            cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_csjpro_web/            /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
-run_step "cp -r sites_deimosCorp_web"        cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_deimosCorp_web/        /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
-run_step "cp -r sites_deimosMetrics_web"     cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_deimosMetrics_web/     /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
-run_step "cp -r sites_digitalCreations_web"  cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_digitalCreations_web/  /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
-run_step "cp -r sites_enConstruccion"        cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_enConstruccion/        /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
-run_step "cp -r sites_frucomex_admin"        cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_frucomex_admin/        /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
-run_step "cp -r sites_frucomex_web"          cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_frucomex_web/          /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
-run_step "cp -r sites_orionix_admin"         cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_orionix_admin/         /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
-run_step "cp -r sites_orionix_web"           cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_orionix_web/           /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
-run_step "cp -r vendors (coreEngine)"        cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/vendors/                     /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+# --- Copiar carpetas ---
+run_step "cp -r admin"                            cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/admin/                              /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r sites_digitalCreations_web"       cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_digitalCreations_web/         /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r sites_enConstruccion"             cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_enConstruccion/               /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r sites_frucomex_admin"             cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_frucomex_admin/               /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r sites_frucomex_aplication_admin"  cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_frucomex_aplication_admin/    /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r sites_frucomex_legal"             cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_frucomex_legal/               /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r sites_frucomex_web"               cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_frucomex_web/                 /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r vendors (coreEngine)"             cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/vendors/                            /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
 
 # ============================================================
-#  SECCION 3: CoreEngine (Version Publica)
+#  SECCION: CoreEngine (Version Publica)
 # ============================================================
 CURRENT_SECTION="CoreEngine (Version Publica)"
 
-# --- Borrar carpetas (2 pasos) ---
+# --- Borrar carpetas ---
 run_step "rm -rf coreEngine/admin"    rm -rf /mnt/Desarrollos/Github/coreEngine/admin/
 run_step "rm -rf coreEngine/vendors"  rm -rf /mnt/Desarrollos/Github/coreEngine/vendors/
 
-# --- Copiar carpetas (2 pasos) ---
+# --- Copiar carpetas ---
 run_step "cp -r admin (coreEngine publico)"    cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/admin/   /mnt/Desarrollos/Github/coreEngine/
 run_step "cp -r vendors (coreEngine publico)"  cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/vendors/ /mnt/Desarrollos/Github/coreEngine/
 
 # --- Borrar configs (1 paso agrupado) ---
 run_step "rm -f ConfigAPP/Data/Mail/Token (coreEngine)" bash -c "
-rm -f /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigAPP.php
-rm -f /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigData.php
-rm -f /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigMail.php
-rm -f /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigToken.php
+mv /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigAPP.php \
+   /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigAPP.php.example
+mv /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigDataBase.php \
+   /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigDataBase.php.example
+mv /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigMail.php \
+   /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigMail.php.example
+mv /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigToken.php \
+   /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigToken.php.example
 "
 
-# --- Borrar modulos privados (3 pasos) ---
-run_step "rm -rf admin/app/modules/campanas"  rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/campanas/
-run_step "rm -rf admin/app/modules/IA_module"  rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/IA_module/
-run_step "rm -rf vendors/libs/php-ai-sdk"  rm -rf /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/vendors/libs/php-ai-sdk/
+# --- Borrar modulos privados ---
+run_step "rm -rf admin/app/modules/campanas"           rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/campanas/
+run_step "rm -rf admin/app/modules/IA_module"          rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/IA_module/
+run_step "rm -rf admin/app/modules/reservas_espacios"  rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/reservas_espacios/
 
 # ============================================================
-#  SECCION 4: PHP AI SDK
+#  SECCION: SimpliVet
 # ============================================================
-CURRENT_SECTION="PHP AI SDK"
+CURRENT_SECTION="SimpliVet"
 
-# --- Borrar carpetas (2 pasos) ---
-run_step "rm -rf php-ai-sdk/ejemplos"    rm -rf /mnt/Desarrollos/Github/php-ai-sdk/ejemplos/
-run_step "rm -rf php-ai-sdk/src"  rm -rf /mnt/Desarrollos/Github/php-ai-sdk/src/
+# --- Borrar carpetas ---
+run_step "rm -rf Trabajo_Propios/A2XRXS_gears"                    rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/A2XRXS_gears/
+run_step "rm -rf Trabajo_Propios/Legacy"                          rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/Legacy/
+run_step "rm -rf Trabajo_Propios/LIB_assets"                      rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/LIB_assets/
+run_step "rm -rf Trabajo_Propios/LIBS_js"                         rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/LIBS_js/
+run_step "rm -rf Trabajo_Propios/LIBS_php"                        rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/LIBS_php/
+run_step "rm -rf Trabajo_Propios/sistema_vr_admin"                rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_admin/
+run_step "rm -rf Trabajo_Propios/sistema_vr_vetpet_cliente"       rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_vetpet_cliente/
+run_step "rm -rf Trabajo_Propios/sistema_vr_vetpet_dueno"         rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_vetpet_dueno/
+run_step "rm -rf Trabajo_Propios/sistema_vr_vetpet_resources"     rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_vetpet_resources/
+run_step "rm -rf Trabajo_Propios/sitio_web_vr_digital_creations"  rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/sitio_web_vr_digital_creations/
+run_step "rm -rf Trabajo_Propios/sitio_web_vr_simplivet"          rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/sitio_web_vr_simplivet/
+run_step "rm -rf Trabajo_Propios/sitio_web_vr_simplivet_legal"    rm -rf /mnt/Desarrollos/Github/Trabajo_Propios/sitio_web_vr_simplivet_legal/
 
 # --- Copiar carpetas ---
-run_step "cp -r PHP AI SDK"    cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/php-ai-sdk/   /mnt/Desarrollos/Github/
+run_step "cp -r Trabajo_Propios" cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/simpliVet/. /mnt/Desarrollos/Github/Trabajo_Propios/
+
+# --- Borrar configs (1 paso agrupado) ---
+run_step "rm -f configs (polz_system)" bash -c "
+mv /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_admin/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_admin/A1XRXS_sys/xrxs_configuracion/config.php.example
+mv /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_admin/A1XRXS_sys/xrxs_configuracion/config_cron.php \
+   /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_admin/A1XRXS_sys/xrxs_configuracion/config_cron.php.example
+mv /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_vetpet_cliente/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_vetpet_cliente/A1XRXS_sys/xrxs_configuracion/config.php.example
+mv /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_vetpet_dueno/A1XRXS_sys/xrxs_configuracion/config.php \
+   /mnt/Desarrollos/Github/Trabajo_Propios/sistema_vr_vetpet_dueno/A1XRXS_sys/xrxs_configuracion/config.php.example
+"
 
 # ============================================================
-#  SECCION 5: Reset Navicat Premium
+#  SECCION: Reset Navicat Premium
 # ============================================================
 CURRENT_SECTION="Reset Navicat Premium"
 
-# --- Backup dconf (1 paso) ---
+# --- Backup dconf ---
 run_step "Backup dconf user" bash -c "
 DATE=\$(date '+%Y%m%d_%H%M%S')
 cp ~/.config/dconf/user ~/.config/dconf/user.\${DATE}.bk
 "
 
-# --- Backup preferences.json (1 paso) ---
+# --- Backup preferences.json ---
 run_step "Backup preferences.json (Navicat)" bash -c "
 DATE=\$(date '+%Y%m%d_%H%M%S')
 cp ~/.config/navicat/Premium/preferences.json ~/.config/navicat/Premium/preferences.json.\${DATE}.bk
 "
 
-# --- Reset dconf Navicat (1 paso) ---
+# --- Reset dconf Navicat ---
 run_step "dconf reset Navicat Premium" bash -c "
 dconf reset -f /com/premiumsoft/navicat-premium/
 "
 
-# --- Limpiar campos en preferences.json (1 paso) ---
+# --- Limpiar campos en preferences.json ---
 run_step "sed reset preferences.json (Navicat)" bash -c "
 sed -i -E 's/,?\"([A-F0-9]+)\":\{([^\}]+)},?//g' ~/.config/navicat/Premium/preferences.json
 "
