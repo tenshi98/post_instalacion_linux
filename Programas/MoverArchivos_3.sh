@@ -5,6 +5,9 @@
 #  Descripcion: Copia archivos con animacion de gatito ASCII
 # ============================================================
 
+# --- Variables globales ---
+TOTAL_STEPS=95
+
 # --- Colores ANSI ---
 RESET="\033[0m"
 BOLD="\033[1m"
@@ -47,7 +50,6 @@ tput smcup
 clear
 
 # --- Variables globales ---
-TOTAL_STEPS=75
 CURRENT_STEP=0
 CURRENT_SECTION=""
 CURRENT_TASK=""
@@ -466,13 +468,40 @@ run_step "mkdir -p frontend-plataforma-monolitica" mkdir -p /mnt/Desarrollos/Git
 
 # --- Copiar carpetas ---
 run_step "cp -r admin"                            cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/admin/                              /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r sites_csjpro_web"                 cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_csjpro_web/                   /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
 run_step "cp -r sites_digitalCreations_web"       cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_digitalCreations_web/         /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
 run_step "cp -r sites_enConstruccion"             cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_enConstruccion/               /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
-run_step "cp -r sites_frucomex_admin"             cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_frucomex_admin/               /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
 run_step "cp -r sites_frucomex_aplication_admin"  cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_frucomex_aplication_admin/    /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
 run_step "cp -r sites_frucomex_legal"             cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_frucomex_legal/               /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
 run_step "cp -r sites_frucomex_web"               cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_frucomex_web/                 /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r sites_stepclean_web"              cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/sites_stepclean_web/                /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
 run_step "cp -r vendors (coreEngine)"             cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/vendors/                            /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+
+# --- Agentes ---
+run_step "cp -r agents"     cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/agents/         /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r docs"       cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/docs/           /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r projects"   cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/projects/       /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r skills"     cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/skills/         /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r .claude"    cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/.claude/        /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r .opencode"  cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/.opencode/      /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+run_step "cp -r .vscode"    cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/.vscode/        /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+
+# --- Copiar archivos extras (1 paso agrupado) ---
+run_step "cp extras" bash -c "
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/AGENTS.md        /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/CLAUDE.md        /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/README.md        /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/AGENTES.md       /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/ARCHITECTURE.md  /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/DATABASE.md      /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/FEATURES.md      /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/INSTALLATION.md  /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/OPERATIONS.md    /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/SECURITY.md      /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
+"
+
+# --- Copiar archivos de las imagenes ---
+run_step "cp -r src"     cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/src/         /mnt/Desarrollos/Github/fullstack/frontend-plataforma-monolitica/
 
 # ============================================================
 #  SECCION: CoreEngine (Version Publica)
@@ -500,9 +529,43 @@ mv /mnt/Desarrollos/Github/coreEngine/admin/app/config/ConfigToken.php \
 "
 
 # --- Borrar modulos privados ---
-run_step "rm -rf admin/app/modules/campanas"           rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/campanas/
-run_step "rm -rf admin/app/modules/IA_module"          rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/IA_module/
-run_step "rm -rf admin/app/modules/reservas_espacios"  rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/reservas_espacios/
+run_step "rm -rf admin/app/modules/campanas"            rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/campanas/
+run_step "rm -rf admin/app/modules/IA_module"           rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/IA_module/
+run_step "rm -rf admin/app/modules/installer"           rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/installer/
+run_step "rm -rf admin/app/modules/reservas_espacios"   rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/reservas_espacios/
+run_step "rm -rf admin/app/modules/reservas_servicios"  rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/reservas_servicios/
+run_step "rm -rf admin/app/modules/tokens_listado"      rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/modules/tokens_listado/
+run_step "rm -rf admin/app/MCP"                         rm -rf /mnt/Desarrollos/Github/coreEngine/admin/app/MCP/
+
+# --- Borrar carpetas ---
+run_step "rm -rf coreEngine/admin/security"         rm -rf /mnt/Desarrollos/Github/coreEngine/admin/security/
+run_step "rm -rf coreEngine/admin/public/upload"    rm -rf /mnt/Desarrollos/Github/coreEngine/admin/public/upload/
+
+# --- Crear carpetas extras (1 paso agrupado) ---
+run_step "mkdir -p security" bash -c "
+mkdir -p /mnt/Desarrollos/Github/coreEngine/admin/security
+mkdir -p /mnt/Desarrollos/Github/coreEngine/admin/public/upload
+"
+# --- Copiar archivos extras (1 paso agrupado) ---
+run_step "cp extras" bash -c "
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/admin/security/.htaccess  /mnt/Desarrollos/Github/coreEngine/admin/security/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/admin/public/upload/.htaccess  /mnt/Desarrollos/Github/coreEngine/admin/public/upload/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/admin/public/upload/index.php  /mnt/Desarrollos/Github/coreEngine/admin/public/upload/
+"
+# --- Copiar archivos extras (1 paso agrupado) ---
+run_step "cp extras" bash -c "
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/README.md        /mnt/Desarrollos/Github/coreEngine/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/AGENTES.md       /mnt/Desarrollos/Github/coreEngine/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/ARCHITECTURE.md  /mnt/Desarrollos/Github/coreEngine/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/DATABASE.md      /mnt/Desarrollos/Github/coreEngine/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/FEATURES.md      /mnt/Desarrollos/Github/coreEngine/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/INSTALLATION.md  /mnt/Desarrollos/Github/coreEngine/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/OPERATIONS.md    /mnt/Desarrollos/Github/coreEngine/
+cp /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/SECURITY.md      /mnt/Desarrollos/Github/coreEngine/
+"
+
+# --- Copiar archivos de las imagenes ---
+run_step "cp -r src"     cp -r /mnt/Desarrollos/Entornos/docker_entorno_lamp/www/coreEngine/src/         /mnt/Desarrollos/Github/coreEngine/
 
 # ============================================================
 #  SECCION: SimpliVet
